@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--<meta http-equiv="Refresh" content="1">-->
+</head>
+<script>
+  function sendPostReq(drinkID) {
+    console.log("Calling the post req function...");
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(drinkID + "," + (new Date).getTime());
+  }
+</script>
+
+<body>
+
+  <h1>My First Heading</h1>
+  <input type="submit" name="submit_button" value="0" onClick="sendPostReq('whiskey')">
+  <input type="submit" name="submit_button" value="1" onClick="sendPostReq('1')">
+  <input type="submit" name="submit_button" value="2" onClick="sendPostReq('2')">
+  <input type="submit" name="submit_button" value="3" onClick="sendPostReq('3')">
+  <input type="submit" name="submit_button" value="4" onClick="sendPostReq('4')">
+  <input type="submit" name="submit_button" value="5" onClick="sendPostReq('5')">
+  <input type="submit" name="submit_button" value="6" onClick="sendPostReq('6')">
+
+  <p>My first paragraph.</p>
+
+</body>
+
+</html>
