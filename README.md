@@ -1,3 +1,3 @@
 # CocktailMachine
-## Helloooooo
-This is regular text
+
+This is a repo that maintains the code necessary to run the cocktail machine built by Baptiste & Sébastien Higgs. Specifications for the physical build of this machine will be uploaded at a later date. What is necessary to know for the purpose of this code is that there are 12 bottles of liquid that are each operated by seperate GPIO pins on a raspberry pi (ed. 1 model B). A webpage is served from this same raspberry pi that allows users to choose which cocktail they would like to have. The main purpose of the code is to translate this webpage interaction into the appropriate GPIO transmissions to create the appropriate cocktail.
