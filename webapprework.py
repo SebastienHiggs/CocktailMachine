@@ -56,15 +56,11 @@ class Machine:
 machine = Machine()
 
 
-
-pin = [7, 8, 10, 12, 11, 13, 15, 16, 19, 21, 22, 23]
-
 app = Flask(__name__)
 print("1")
 workingTillTime = 0
 drinkLength = 5000
 currentDrink = ""
-
 
 
 # GPIO.output(pin[counter], True)        <- Start specific ingredient flow
