@@ -1,12 +1,22 @@
-from flask import Flask, render_template, request from time import time, sleep import RPi.GPIO as GPIO
+from flask import Flask, render_template, request
+from time import time, sleep
+import RPi.GPIO as GPIO
 
-class Machine: def __init__(self): self.workingTillTime = 0 self.bottles = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] self.pins = [7, 8, 10, 12, 11, 13, 15, 16, 19, 21, 22, 23] self.pourEndTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 
-        0, 0, 0] self.setupGPIO()
+class Machine:
+    def __init__(self):
+        self.workingTillTime = 0
+        self.bottles = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        self.pins = [7, 8, 10, 12, 11, 13, 15, 16, 19, 21, 22, 23]
+        self.pourEndTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.setupGPIO()
     
 
-    def setupGPIO(self): """Set up the GPIO pins""" GPIO.setmode(GPIO.BOARD)
+    def setupGPIO(self):
+        """Set up the GPIO pins"""
+        GPIO.setmode(GPIO.BOARD)
 
-        for pinNum in self.pins: GPIO.setup(pinNum, GPIO.OUT)
+        for pinNum in self.pins:
+            GPIO.setup(pinNum, GPIO.OUT)
 
 
     def addBottleSeconds(self, bottle, seconds):
