@@ -115,7 +115,12 @@ def main(): # This is what's called when the page is searched for
             while machine.checkBottlesForClosing():
                 # Sleep a little to allow the pi to do things other than a really fast loop.
                 # I think not doing this is what caused an earlier version to crash.
-                sleep(0.05)
+                sleep(0.3) # <-- CHANGE THIS! It's too high a number atm (for testing), maybe put 0.05?
+
+                # Debugging statements
+                print("\nTest iteration. Still not finished!")
+                print("Now: " + str(time()) + " || End times: " str(machine.pourEndTimes))
+                print([["Closed", "Open"][machine.checkBottleOpen(bottle)] for bottle in machine.bottles])
         else:
             print("Currently mixing a drink! ")            
     return render_template('index.html')
