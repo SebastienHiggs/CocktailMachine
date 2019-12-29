@@ -106,7 +106,7 @@ def main(): # This is what's called when the page is searched for
         print("py: " + str(pythonTime) + " js: " + str(javascriptTime))
         print("Difference (py - js) = " + str(pythonTime - javascriptTime))
 
-        if (javascriptTime > machine.workingTillTime):
+        if (javascriptTime > machine.workingTillTime and False): #Remove this 'False'!
             print("Let's mix up a drink: ")
             print(drinkID)
             machine.startRecipe(recipes[drinkID])
@@ -125,11 +125,15 @@ def main(): # This is what's called when the page is searched for
                 print("\nTest iteration. Still not finished!")
                 print("Now: " + str(time()) + " || End times: " + str(machine.pourEndTimes))
                 print([["Closed", "Open"][machine.checkBottleOpen(bottle)] for bottle in machine.bottles])
+            print("Drink finished pouring!")
         else:
-            print("Currently mixing a drink! ")            
+            print("Currently mixing a drink! ")
+        print("Last req method statement")
+    print("pre-return")
     return render_template('index.html')
 
 if __name__    == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)
 
+print("End of file!")
 #If stuck in a stupid loop of not working type in localhost:80/index.html and it won't work but it seems to reset it somewhat
