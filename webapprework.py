@@ -50,11 +50,11 @@ class Machine:
         
         Return True if not finished, return False if finished."""
 
-        stillGoing = True
+        stillGoing = False
 
         for bottle in self.bottles:
             if self.checkBottleOpen(bottle):
-                stillGoing = False
+                stillGoing = True
                 if self.pourEndTimes[bottle] < time():
                     self.closeBottle(bottle)
         
