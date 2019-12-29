@@ -110,11 +110,15 @@ def main(): # This is what's called when the page is searched for
             print("Let's mix up a drink: ")
             print(drinkID)
             machine.startRecipe(recipes[drinkID])
+            
+            print("recipe started!")
+            print("Are the bottles all closed? " + str(machine.checkBottlesForClosing()))
 
             # This continuously checks whether bottles should be closed, and returns false if they're all closed.
             while machine.checkBottlesForClosing():
                 # Sleep a little to allow the pi to do things other than a really fast loop.
                 # I think not doing this is what caused an earlier version to crash.
+                print("presleep")
                 sleep(0.3) # <-- CHANGE THIS! It's too high a number atm (for testing), maybe put 0.05?
 
                 # Debugging statements
