@@ -51,12 +51,16 @@ class Machine:
         Return True if not finished, return False if finished."""
 
         stillGoing = False
+        
+        print("\nChecking bottles begin")
 
         for bottle in self.bottles:
             if self.checkBottleOpen(bottle):
                 stillGoing = True
                 if self.pourEndTimes[bottle] < time():
                     self.closeBottle(bottle)
+        
+        print("\nChecking bottles end. stillGoing: " + str(stillGoing))
         
         return stillGoing
 
@@ -106,7 +110,7 @@ def main(): # This is what's called when the page is searched for
         print("py: " + str(pythonTime) + " js: " + str(javascriptTime))
         print("Difference (py - js) = " + str(pythonTime - javascriptTime))
 
-        if (javascriptTime > machine.workingTillTime and False): #Remove this 'False'!
+        if (javascriptTime > machine.workingTillTime): #Remove this 'False'!
             print("Let's mix up a drink: ")
             print(drinkID)
             machine.startRecipe(recipes[drinkID])
