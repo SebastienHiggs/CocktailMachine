@@ -119,7 +119,7 @@ def main(): # This is what's called when the page is searched for
             print("Are the bottles all closed? " + str(machine.checkBottlesForClosing()))
 
             # This continuously checks whether bottles should be closed, and returns false if they're all closed.
-            while machine.checkBottlesForClosing() and False: #Remove the false!
+            while machine.checkBottlesForClosing():
                 # Sleep a little to allow the pi to do things other than a really fast loop.
                 # I think not doing this is what caused an earlier version to crash.
                 print("presleep")
